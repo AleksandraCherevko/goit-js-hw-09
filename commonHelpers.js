@@ -4,5 +4,5 @@ import"./assets/styles-7781f45b.js";import{S as t}from"./assets/vendor-870f0eb5.
          <img src="${i.preview}" alt="${i.description}" class="gallery-image" title="${i.description}">
       </a>
       </li>
-    `).join("")}o.style.display="flex";o.style.flexWrap="wrap";o.style.gap="24px";function n(p){p.preventDefault(),p.target,p.currentTarget}let c=new t(".gallery a",{options:{captionDelay:250}});console.log(c);
+    `).join("")}o.style.display="flex";o.style.flexWrap="wrap";o.style.gap="24px";function n(p){p.preventDefault(),p.target,p.currentTarget}new t(".gallery a",{options:{captionDelay:250}});
 //# sourceMappingURL=commonHelpers.js.map
