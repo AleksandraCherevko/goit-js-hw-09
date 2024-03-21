@@ -15,3 +15,12 @@ img {
 .gallery-item {
   max-width: calc((100% - 48px) / 3);
 }
+
+h1 {
+  display: none;
+}
+
+.container {
+  display: flex;
+  padding: 80px;
+}

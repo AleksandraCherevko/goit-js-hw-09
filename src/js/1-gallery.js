@@ -69,7 +69,6 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 gallery.insertAdjacentHTML('beforeend', createMarkup(images));
-gallery.addEventListener('click', openLargeImage);
 
 function createMarkup(array) {
   return array
@@ -88,13 +87,6 @@ function createMarkup(array) {
 gallery.style.display = 'flex';
 gallery.style.flexWrap = 'wrap';
 gallery.style.gap = '24px';
-
-function openLargeImage(event) {
-  event.preventDefault();
-  if (event.target === event.currentTarget) {
-    return;
-  }
-}
 
 let lightbox = new SimpleLightbox('.gallery a', {
   options: { captionDelay: 250 },
