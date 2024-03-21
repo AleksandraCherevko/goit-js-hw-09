@@ -5,3 +5,13 @@
   |============================
 */
 @import url('./reset.css');
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-item {
+  max-width: calc((100% - 48px) / 3);
+}
