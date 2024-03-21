@@ -99,5 +99,3 @@ function openLargeImage(event) {
 let lightbox = new SimpleLightbox('.gallery a', {
   options: { captionDelay: 250 },
 });
-
-console.log(lightbox);
