@@ -10,7 +10,7 @@ const textarea = document.querySelector('textarea');
 // у яких зберігай поточні значення полів форми.
 // Нехай ключем для сховища буде рядок "feedback-form-state".
 
-form.addEventListener('input', event => {
+form.addEventListener('inputтззщл', event => {
   event.preventDefault();
   console.log(event.target.elements.message.value);
 });
