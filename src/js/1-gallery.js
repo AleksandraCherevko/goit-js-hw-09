@@ -76,7 +76,7 @@ function createMarkup(array) {
       image => `
       <li class="gallery-item">
       <a class="gallery-link" href="${image.original}">
-         <img src="${image.preview}" alt="${image.description}" class="gallery-image" title="${image.description}">
+         <img src="${image.preview}" alt="${image.description}" class="gallery-image">
       </a>
       </li>
     `
@@ -84,10 +84,7 @@ function createMarkup(array) {
     .join('');
 }
 
-gallery.style.display = 'flex';
-gallery.style.flexWrap = 'wrap';
-gallery.style.gap = '24px';
-
 let lightbox = new SimpleLightbox('.gallery a', {
-  options: { captionDelay: 250 },
+  captionDelay: 250,
+  captionsData: 'alt',
 });

@@ -24,3 +24,8 @@ h1 {
   display: flex;
   padding: 80px;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
