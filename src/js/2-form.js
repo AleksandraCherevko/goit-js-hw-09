@@ -1,36 +1,18 @@
-// Використовуючи делегуваня, відстежуй на формі подію input і
-// щоразу записуй у локальне сховище об'єкт з полями email і message,
-// у яких зберігай поточні значення полів форми.
-// Нехай ключем для сховища буде рядок "feedback-form-state".
-
 const STORAGE_KEY = 'feedback-form-state';
 const form = document.querySelector('.feedback-form');
-const textarea = form.querySelector('textarea');
-const emailarea = form.querySelector('input');
+const textarea = form.elements.message;
+textarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
+const emailarea = form.elements.email;
+emailarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
 
-form.addEventListener('submit', handleSubmit);
-form.addEventListener('input', onTextareaInput);
+form.addEventListener('input', event => {
+  localStorage.setItem(STORAGE_KEY, event.target.value);
+});
 
-populateTextarea();
-
-function onTextareaInput(event) {
-  const message = event.target.value;
-  localStorage.setItem(STORAGE_KEY, message);
-}
-
-function populateTextarea() {
-  const savedMessage = localStorage.getItem(STORAGE_KEY);
-  if (savedMessage) {
-    form.value = savedMessage;
-    // emailarea.value = savedMessage;
-  }
-}
-
-function handleSubmit(event) {
+form.addEventListener('submit', event => {
   event.preventDefault();
-  event.currentTarget.reset();
+  console.log(event.target.elements.message.value);
+  console.log(event.target.elements.email.value);
   localStorage.removeItem(STORAGE_KEY);
-}
-// Під час завантаження сторінки перевіряй стан сховища,
-// і якщо там є збережені дані,
-// то заповнюй ними поля форми. В іншому випадку поля повинні бути порожніми.
+  form.reset();
+});
