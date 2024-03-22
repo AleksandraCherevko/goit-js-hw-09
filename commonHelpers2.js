@@ -1,2 +1,2 @@
-import"./assets/styles-cb79a739.js";const t=document.querySelector(".feedback-form");document.querySelector("textarea");t.addEventListener("inputтззщл",e=>{e.preventDefault(),console.log(e.target.elements.message.value)});
+import"./assets/styles-cb79a739.js";const a="feedback-form-state",t=document.querySelector(".feedback-form");t.querySelector("textarea");t.querySelector("input");t.addEventListener("submit",c);t.addEventListener("input",o);n();function o(e){const r=e.target.value;localStorage.setItem(a,r)}function n(){const e=localStorage.getItem(a);e&&(t.value=e)}function c(e){e.preventDefault(),e.currentTarget.reset(),localStorage.removeItem(a)}
 //# sourceMappingURL=commonHelpers2.js.map
