@@ -8,8 +8,6 @@ textarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
 const emailarea = form.elements.email;
 emailarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
 
-//
-
 let formValues = JSON.stringify(localStorage.getItem(STORAGE_KEY));
 
 form.addEventListener('input', event => {
