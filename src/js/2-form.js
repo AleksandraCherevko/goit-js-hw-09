@@ -6,7 +6,7 @@ const emailarea = form.elements.email;
 emailarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
 
 form.addEventListener('input', event => {
-  localStorage.setItem(STORAGE_KEY, event.target.value);
+  localStorage.setItem('STORAGE_KEY', 'event.target.value');
 });
 
 form.addEventListener('submit', event => {
