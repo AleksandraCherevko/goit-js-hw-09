@@ -11,7 +11,7 @@ emailarea.value = localStorage.getItem(STORAGE_KEY) ?? '';
 let formValues = JSON.stringify(localStorage.getItem(STORAGE_KEY));
 
 form.addEventListener('input', event => {
-  localStorage.setItem(STORAGE_KEY, event);
+  localStorage.setItem(STORAGE_KEY, event.target.value);
 });
 
 form.addEventListener('submit', event => {
