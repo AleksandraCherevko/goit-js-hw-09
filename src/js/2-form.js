@@ -27,24 +27,26 @@ popText();
 // let formValues = JSON.stringify(localStorage.getItem(STORAGE_KEY));
 form.addEventListener('submit', event => {
   event.preventDefault();
+  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  console.log(savedMessage);
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 });
 
 form.addEventListener('input', event => {
   const formValues = {
-    Email: form.email.value,
-    Message: form.message.value,
+    email: form.email.value,
+    message: form.message.value,
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formValues));
 });
 
 function popText() {
-  const savedMessage = localStorage.getItem(STORAGE_KEY);
-  const { email, message } = JSON.parse(savedMessage);
+  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  // const { email, message } = JSON.parse(savedMessage);
   if (savedMessage) {
-    textarea.value = email;
-    input.value = message;
+    textarea.value = savedMessage.message || '';
+    input.value = savedMessage.email || '';
   }
 }
 
