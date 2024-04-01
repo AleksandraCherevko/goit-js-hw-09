@@ -9,9 +9,9 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if ((localStorage.getItem = savedMessage)) {
+  if (localStorage.getItem === savedMessage) {
     console.log(savedMessage);
-  } else if ((localStorage.getItem = '')) {
+  } else if (localStorage.getItem === '') {
     return;
   }
   event.currentTarget.reset();
@@ -20,8 +20,8 @@ form.addEventListener('submit', event => {
 
 form.addEventListener('input', event => {
   const formValues = {
-    email: form.email.value,
-    message: form.message.value,
+    email: form.email.value.trim(),
+    message: form.message.value.trim(),
   };
   if (!form.email.value || !form.message.value) {
     return;
