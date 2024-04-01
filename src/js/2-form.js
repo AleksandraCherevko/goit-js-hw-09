@@ -9,6 +9,11 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
+  if ((localStorage.getItem = savedMessage)) {
+    console.log(savedMessage);
+  } else if ((localStorage.getItem = '')) {
+    return;
+  }
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 });
@@ -18,12 +23,10 @@ form.addEventListener('input', event => {
     email: form.email.value,
     message: form.message.value,
   };
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(formValues));
-
   if (!form.email.value || !form.message.value) {
     return;
   }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formValues));
 });
 
 function popText() {
