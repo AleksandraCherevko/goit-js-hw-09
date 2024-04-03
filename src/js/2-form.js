@@ -9,9 +9,9 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-  if (localStorage.getItem === savedMessage) {
+  if (savedMessage) {
     console.log(savedMessage);
-  } else if (localStorage.getItem === '') {
+  } else {
     return;
   }
   event.currentTarget.reset();
